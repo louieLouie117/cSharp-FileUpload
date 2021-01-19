@@ -45,10 +45,19 @@ namespace FileUpload.Controllers
             {
                 if (formFile.Length > 0)
                 {
+                    string timeStampMonth = DateTime.Now.Month.ToString("00");
+                    string timeStampDay = DateTime.Now.Day.ToString("00");
+                    string timeStampHour = DateTime.Now.Hour.ToString("00");
+                    string timeStampMinutes = DateTime.Now.Minute.ToString("00");
+                    string timeStampSeconds = DateTime.Now.Second.ToString("00");
+
+                    string timeStamp = $"{timeStampMonth}{timeStampDay}{timeStampHour}{timeStampMinutes}{timeStampSeconds}";
 
                     // full path to file in temp location
-                    var filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/img/uploads", formFile.FileName); //we are using Temp file name just for the example. Add your own file path.
-                    Console.WriteLine($"FileName: {formFile.FileName}");
+                    var filePath = Path.Combine(Directory.GetCurrentDirectory(),
+                     "wwwroot/img/uploads", $"{timeStamp}{formFile.FileName}"); //we are using Temp file name just for the example. Add your own file path.
+                    Console.WriteLine($"FileName: {timeStamp}{formFile.FileName}");
+
                     filePaths.Add(filePath);
                     using (var stream = new FileStream(filePath, FileMode.Create))
                     {
@@ -66,7 +75,6 @@ namespace FileUpload.Controllers
             return RedirectToAction("index");
         }
     }
-
 
 
 }
