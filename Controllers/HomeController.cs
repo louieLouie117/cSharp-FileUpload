@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using FileUpload.Models;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
+using System.Collections.Generic;
 
 
 namespace FileUpload.Controllers
@@ -22,7 +23,24 @@ namespace FileUpload.Controllers
 
         public IActionResult index()
         {
-            return View("index");
+
+
+            MainWrapper wMod = new MainWrapper();
+
+            return View("index", wMod);
+        }
+
+
+        [HttpPost("CrateApprentice")]
+
+        public IActionResult CrateApprentice(Apprentice FromForm)
+        {
+
+            Console.WriteLine("Button was click, New Apprentice was Created");
+
+
+            return RedirectToAction("index");
+
         }
 
     }

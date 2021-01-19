@@ -1,0 +1,15 @@
+@using FileUpload.Models
+@model Apprentice
+
+<div class="apprentice-Container">
+
+    <h2>Add a new Apprentice</h2>
+    <form asp-action="CrateApprentice" asp-controller="Home" method="Post">
+
+        <input asp-for="name">
+        <input asp-for="file" type="file" FileUpload id="FileUpload1">
+
+        <input type="submit" value="Submit!">
+
+    </form>
+</div>

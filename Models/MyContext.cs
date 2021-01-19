@@ -8,7 +8,7 @@ namespace FileUpload.Models
         public MyContext(DbContextOptions options) : base(options) { }
 
 
-        public DbSet<NewAppretice> NewAppretices { get; set; }
+        public DbSet<Apprentice> Apprentices { get; set; }
     }
 
 }
