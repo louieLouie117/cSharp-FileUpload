@@ -3,13 +3,20 @@
 
 <div class="apprentice-Container">
 
-    <h2>Add a new Apprentice</h2>
-    <form asp-action="CrateApprentice" asp-controller="Home" method="Post">
 
-        <input asp-for="name">
-        <input asp-for="file" type="file" FileUpload id="FileUpload1">
+    <header>
 
-        <input type="submit" value="Submit!">
+        <h2>Add a new Apprentice</h2>
+        <form asp-action="CrateApprentice" asp-controller="Home" method="Post" enctype="multipart/form-data">
 
-    </form>
+            <input asp-for="name" placeholder="name">
+            <input asp-for="files" type="file" multiple>
+
+            <input type="submit" value="Submit!">
+        </form>
+
+    </header>
+    <main>
+        <h2>Rendering db</h2>
+    </main>
 </div>
