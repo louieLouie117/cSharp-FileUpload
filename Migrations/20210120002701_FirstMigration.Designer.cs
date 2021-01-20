@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FileUpload.Migrations
 {
     [DbContext(typeof(MyContext))]
-    [Migration("20210119011408_FristMigratoin")]
-    partial class FristMigratoin
+    [Migration("20210120002701_FirstMigration")]
+    partial class FirstMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -19,7 +19,7 @@ namespace FileUpload.Migrations
                 .HasAnnotation("ProductVersion", "3.1.5")
                 .HasAnnotation("Relational:MaxIdentifierLength", 64);
 
-            modelBuilder.Entity("FileUpload.Apprentice", b =>
+            modelBuilder.Entity("FileUpload.Models.Apprentice", b =>
                 {
                     b.Property<int>("ApprenticeId")
                         .ValueGeneratedOnAdd()
@@ -28,14 +28,14 @@ namespace FileUpload.Migrations
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime(6)");
 
-                    b.Property<string>("File")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
-
-                    b.Property<string>("Name")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
-
                     b.Property<DateTime>("UpdatedAt")
                         .HasColumnType("datetime(6)");
+
+                    b.Property<string>("UploadName")
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+
+                    b.Property<string>("name")
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
 
                     b.HasKey("ApprenticeId");
 

@@ -1,8 +1,11 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 // system need for File upload
+using System.IO;
+using Microsoft.AspNetCore.Http;
 
 namespace FileUpload.Models
 {
@@ -13,13 +16,21 @@ namespace FileUpload.Models
         public int ApprenticeId { get; set; }
 
         public string name { get; set; }
-        public List<IFormFile> files { get; set; }
+        // public List<IFormFile> files { get; set; }
+
+        public string UploadName { get; set; }
+
+
+        [NotMapped]
+        public IFormFile files { get; set; }
 
         public DateTime CreatedAt { get; set; } = DateTime.Now;
         public DateTime UpdatedAt { get; set; } = DateTime.Now;
 
 
     }
+
+
 
 
 }
