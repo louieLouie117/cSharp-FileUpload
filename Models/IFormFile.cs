@@ -1,4 +1,3 @@
-
 // system need for File upload
 using System.IO;
 using Microsoft.AspNetCore.Http;
@@ -16,8 +15,6 @@ namespace FileUpload.Models
         Stream OpenReadStream();
         void CopyTo(Stream target);
         // Task CopyToAsync(Stream target, CancellationToken cancellationToken = null);
-
-
 
     }
 

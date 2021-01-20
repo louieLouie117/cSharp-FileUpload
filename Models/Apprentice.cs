@@ -3,13 +3,9 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-// system need for File upload
-using System.IO;
-using Microsoft.AspNetCore.Http;
 
 namespace FileUpload.Models
 {
-
     public class Apprentice
     {
         [Key]
@@ -27,10 +23,7 @@ namespace FileUpload.Models
         public DateTime CreatedAt { get; set; } = DateTime.Now;
         public DateTime UpdatedAt { get; set; } = DateTime.Now;
 
-
     }
-
-
 
 
 }
