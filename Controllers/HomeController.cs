@@ -22,7 +22,6 @@ namespace FileUpload.Controllers
             _context = context;
         }
 
-
         [HttpGet("")]
         public IActionResult index()
         {
@@ -33,10 +32,10 @@ namespace FileUpload.Controllers
 
         [HttpPost("CrateApprentice")]
 
-        public async Task<IActionResult> CrateApprentice(List<IFormFile> files, Apprentice FromFrom)
+        public async Task<IActionResult> CrateApprentice(List<IFormFile> files, Apprentice fForm)
         {
 
-            Console.WriteLine($"Apprentice Name: {FromFrom.name}");
+
 
             long size = files.Sum(f => f.Length);
 
@@ -56,18 +55,41 @@ namespace FileUpload.Controllers
                     // full path to file in temp location
                     var filePath = Path.Combine(Directory.GetCurrentDirectory(),
                      "wwwroot/img/uploads", $"{timeStamp}{formFile.FileName}"); //we are using Temp file name just for the example. Add your own file path.
+
+                    // for the db
+                    Console.WriteLine($"Apprentice Name: {fForm.name}");
                     Console.WriteLine($"FileName: {timeStamp}{formFile.FileName}");
+
+                    // string UploadName = $"FileName: {timeStamp}{formFile.FileName}";
+
+
+
+                    string newName = $"{timeStamp}{formFile.FileName}";
+                    fForm.UploadName = newName;
+
+
+
 
                     filePaths.Add(filePath);
                     using (var stream = new FileStream(filePath, FileMode.Create))
                     {
 
+
+
                         await formFile.CopyToAsync(stream);
 
                     }
 
+
                 }
+
+
             }
+
+
+            _context.Add(fForm);
+            _context.SaveChanges();
+
 
             System.Console.WriteLine(new { count = files.Count, size, filePaths });
             // process uploaded files
