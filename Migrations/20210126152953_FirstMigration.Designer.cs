@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FileUpload.Migrations
 {
     [DbContext(typeof(MyContext))]
-    [Migration("20210120002701_FirstMigration")]
+    [Migration("20210126152953_FirstMigration")]
     partial class FirstMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -32,6 +32,9 @@ namespace FileUpload.Migrations
                         .HasColumnType("datetime(6)");
 
                     b.Property<string>("UploadName")
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+
+                    b.Property<string>("aboutMe")
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
 
                     b.Property<string>("name")
