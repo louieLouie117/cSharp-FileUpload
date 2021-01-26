@@ -8,6 +8,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FileUpload</title>
+    <link rel="stylesheet" href="~/css/style.css">
 </head>
 
 <body>
@@ -15,23 +16,34 @@
         <h1>Hello, FileUpload</h1>
         <partial name="newApprenticePartial" model="@Model.Apprentice" />
     </header>
-    <main>
-        <ul>
-            @foreach (var item in ViewBag.ApprenticeList)
-            {
-                <li>
-                    <header>
-                        <a>edit</a>
-                        <a>delete</a>
-                    </header>
-                    <h2>@item.name</h2>
-                    <p>@item.UploadName</p>
-                    <img src="~/img/uploads/@(item.UploadName)" alt="">
-                </li>
-            }
-        </ul>
-    </main>
 
+    <div class="allApprentice-container">
+        <main>
+            <ul>
+                <h2>New Team</h2>
+                @foreach (var item in ViewBag.ApprenticeList)
+                {
+                    <li>
+
+
+                        <img src="~/img/uploads/@(item.UploadName)" alt="">
+
+                        <div>
+
+                            <h2>@item.name</h2>
+                            <p>@item.UploadName</p>
+                        </div>
+
+                        <header>
+                            <a>edit</a>
+                            <a>delete</a>
+                        </header>
+
+                    </li>
+                }
+            </ul>
+        </main>
+    </div>
 </body>
 
 </html>

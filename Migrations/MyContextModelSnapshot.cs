@@ -32,6 +32,9 @@ namespace FileUpload.Migrations
                     b.Property<string>("UploadName")
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
 
+                    b.Property<string>("aboutMe")
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+
                     b.Property<string>("name")
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
 

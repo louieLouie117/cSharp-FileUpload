@@ -16,6 +16,7 @@ namespace FileUpload.Models
 
         public string UploadName { get; set; }
 
+        public string aboutMe { get; set; }
 
         [NotMapped]
         public IFormFile files { get; set; }

@@ -1,0 +1,57 @@
+body{
+    background: whitesmoke;
+    max-width: 35em;
+    font: 1em sans-serif;
+    display: grid;
+    row-gap: 5px;
+
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+ul{
+    list-style: none;
+    padding: 20px;
+}
+
+.apprentice-Container{
+    background: white;
+    box-shadow: 0 0  5px rgba(0, 0, 0, 0.487);
+    padding: 20PX;
+    border-radius: 10px;
+}
+
+
+.apprentice-Container form{
+    display: grid;
+    row-gap: 10PX;
+    column-gap: 10PX;
+}
+
+
+.apprentice-Container form input{
+    padding: 7px;
+}
+.allApprentice-container{
+
+    background: whitesmoke;
+}
+
+.allApprentice-container ul{
+    display: grid;
+    row-gap: 10px;
+    padding-top: 0;
+}
+
+.allApprentice-container ul li {
+    background: white;
+    box-shadow: 0 0  3px rgba(0, 0, 0, 0.487);
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    padding: 20px;
+    border-radius: 20px;
+    height: 100px;
+    overflow: scroll;
+}

@@ -16,6 +16,7 @@ namespace FileUpload.Migrations
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     name = table.Column<string>(nullable: true),
                     UploadName = table.Column<string>(nullable: true),
+                    aboutMe = table.Column<string>(nullable: true),
                     CreatedAt = table.Column<DateTime>(nullable: false),
                     UpdatedAt = table.Column<DateTime>(nullable: false)
                 },
