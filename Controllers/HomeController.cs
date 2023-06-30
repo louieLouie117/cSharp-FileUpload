@@ -139,6 +139,12 @@ namespace FileUpload.Controllers
 
             // Add your logic here to process the Apprentice object
 
+            // add to data base
+            _context.Add(fForm);
+            _context.SaveChanges();
+
+            System.Console.WriteLine(new { count = files.Count, size, filePaths });
+
             return Json(new { success = true, message = "Files uploaded successfully" });
         }
 
