@@ -7,8 +7,6 @@ namespace FileUpload.Models
 {
     public class MainWrapper
     {
-
-
         public Apprentice Apprentice { get; set; }
 
     }

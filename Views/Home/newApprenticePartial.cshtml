@@ -18,6 +18,21 @@
         </form>
 
     </header>
+
+     <header>
+
+        <h2>Add a new file Uploader</h2>
+        <form asp-action="UploadFile" asp-controller="Home" method="Post" enctype="multipart/form-data">
+
+            <input asp-for="name" placeholder="name">
+            <input asp-for="UploadName" placeholder="name" style="display: none;">
+            @* <textarea asp-for="aboutMe" placeholder="abuot me" id="" cols="30" rows="10"></textarea> *@
+            <input asp-for="files" type="file" multiple>
+
+            <input type="submit" value="Submit!">
+        </form>
+
+    </header>
     <main>
 
     </main>
