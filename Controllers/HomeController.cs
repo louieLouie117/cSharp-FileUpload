@@ -148,6 +148,25 @@ namespace FileUpload.Controllers
             return Json(new { success = true, message = "Files uploaded successfully" });
         }
 
+
+        [HttpPost("DeleteImage")]
+        public JsonResult DeleteImage(MainWrapper FromForm)
+        {
+            System.Console.WriteLine($"reach backend of delete image {FromForm.Apprentice.ApprenticeId}");
+
+            var ImageId = (int)FromForm.Apprentice.ApprenticeId;
+
+            Apprentice GetImage = _context.Apprentices.FirstOrDefault(lr => lr.ApprenticeId == ImageId);
+
+
+            _context.Apprentices.Remove(GetImage);
+            _context.SaveChanges();
+
+            return Json(new { success = true, message = "Image deleted successfully" });
+        }
+
+
+
         // end
 
     }
