@@ -173,8 +173,7 @@ namespace FileUpload.Controllers
                     string timeStamp = $"{timeStampMonth}{timeStampDay}{timeStampHour}{timeStampMinutes}{timeStampSeconds}";
 
                     //Place to save file
-                    var filePath = Path.Combine(Directory.GetCurrentDirectory(),
-                     "wwwroot/img/uploads", $"{timeStamp}{formFile.FileName}");
+                    var filePath = Path.Combine("wwwroot/img/uploads", $"{timeStamp}{formFile.FileName}");
 
                     // for the db
                     Console.WriteLine($"Apprentice Name: {fForm.name}");
