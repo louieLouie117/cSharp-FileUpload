@@ -6,7 +6,7 @@
 
     <header>
 
-        <h2>Add a new teammate</h2>
+        <h2>CrateApprentice</h2>
         <form asp-action="CrateApprentice" asp-controller="Home" method="Post" enctype="multipart/form-data">
 
             <input asp-for="name" placeholder="name">
@@ -21,7 +21,7 @@
 
      <header>
 
-        <h2>Add a new file Uploader</h2>
+        <h2>Json Result Uploader File no Async</h2>
         <form asp-action="UploadFile" asp-controller="Home" method="Post" enctype="multipart/form-data">
 
             <input asp-for="name" placeholder="name">
@@ -33,6 +33,22 @@
         </form>
 
     </header>
+
+
+         @* <header>
+
+        <h2>file Uploader</h2>
+        <form asp-action="FileUploader" asp-controller="Home" method="Post" enctype="multipart/form-data">
+
+            <input asp-for="name" placeholder="name">
+            <input asp-for="UploadName" placeholder="name" style="display: none;">
+       
+            <input asp-for="files" type="file" multiple>
+
+            <input type="submit" value="Submit!">
+        </form>
+
+    </header> *@
     <main>
 
     </main>

@@ -2,6 +2,7 @@
 using System.IO;
 using Microsoft.AspNetCore.Http;
 
+
 namespace FileUpload.Models
 {
     public interface IFormFile
