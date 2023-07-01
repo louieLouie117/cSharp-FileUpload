@@ -22,7 +22,7 @@ namespace FileUpload.Controllers
     public class HomeController : Controller
     {
         private MyContext _context;
-        private readonly IWebHostEnvironment _webHostEnvironment;
+        private IWebHostEnvironment _webHostEnvironment;
 
         public HomeController(MyContext context, IWebHostEnvironment webHostEnvironment)
         {
@@ -132,6 +132,7 @@ namespace FileUpload.Controllers
                     using (var stream = new FileStream(serverFolder, FileMode.Create))
                     {
                         await formFile.CopyToAsync(stream);
+
                     }
                     // await formFile.CopyToAsync(new FileStream(serverFolder, FileMode.Create));
 
