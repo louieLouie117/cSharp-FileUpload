@@ -4,25 +4,25 @@
 <div class="apprentice-Container">
 
 
-    <header>
+    @* <header>
 
         <h2>CrateApprentice</h2>
         <form asp-action="CrateApprentice" asp-controller="Home" method="Post" enctype="multipart/form-data">
 
             <input asp-for="name" placeholder="name">
             <input asp-for="UploadName" placeholder="name" style="display: none;">
-            @* <textarea asp-for="aboutMe" placeholder="abuot me" id="" cols="30" rows="10"></textarea> *@
+       
             <input asp-for="files" type="file" multiple>
 
             <input type="submit" value="Submit!">
         </form>
 
-    </header>
+    </header> *@
 
      <header>
 
-        <h2> UploadFile Directory Name Changed</h2>
-        <form asp-action="UploadFile" asp-controller="Home" method="Post" enctype="multipart/form-data">
+        <h2> UploadFile WebHost</h2>
+        <form asp-action="ServerFileUploader" asp-controller="Home" method="Post" enctype="multipart/form-data">
 
             <input asp-for="name" placeholder="name">
             <input asp-for="UploadName" placeholder="name" style="display: none;">
