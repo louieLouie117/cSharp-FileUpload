@@ -127,7 +127,13 @@ namespace FileUpload.Controllers
                     string newName = $"{timeStamp}{formFile.FileName}";
                     fForm.UploadName = newName;
 
-                    await formFile.CopyToAsync(new FileStream(serverFolder, FileMode.Create));
+
+                    filePaths.Add(serverFolder);
+                    using (var stream = new FileStream(serverFolder, FileMode.Create))
+                    {
+                        await formFile.CopyToAsync(stream);
+                    }
+                    // await formFile.CopyToAsync(new FileStream(serverFolder, FileMode.Create));
 
 
 
