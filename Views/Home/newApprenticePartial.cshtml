@@ -12,6 +12,9 @@
        #loading {
         display: none;
       }
+         #snapAndStop {
+        display: none;
+      }
     </style>
 </head>
     @* <header>
@@ -62,12 +65,13 @@
     </header>
 
     <main>
-     <h1>Take a Photo</h1>
-     <p id="loading">Loading...</p>
+   <h1>Take a Photo</h1>
+    <p id="loading">Loading...</p>
     <video id="video" width="640" height="480"></video>
     <button id="start">Start Camera</button>
-    <button id="snapAndStop">Snap Photo and Stop Camera</button>
+    <button id="snapAndStop">Take a Photo</button>
     <canvas id="canvas" width="640" height="480"></canvas>
+    <div id="photo"></div>
 
     <script>
       // Elements for taking the snapshot
@@ -77,9 +81,11 @@
       var context = canvas.getContext('2d');
       var start = document.getElementById('start');
       var snapAndStop = document.getElementById('snapAndStop');
+      var photo = document.getElementById('photo');
 
       // Start camera
       start.addEventListener('click', function () {
+        snapAndStop.style.display = 'block';
         loading.style.display = 'block';
         if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
           navigator.mediaDevices.getUserMedia({ video: true }).then(function (stream) {
@@ -95,6 +101,13 @@
                 track.stop();
               });
               video.style.display = 'none';
+
+              // Display photo in div element with unique id and timestamp
+              var dataURL = canvas.toDataURL('image/png');
+              var img = document.createElement('img');
+              img.src = dataURL;
+              img.id = 'photo-' + Date.now();
+              photo.appendChild(img);
             });
           });
         }
