@@ -5,14 +5,13 @@
 
 <head>
     <style>
+    #loading {
+        display: none;
+      }
       #video {
         display: none;
       }
-
-       #loading {
-        display: none;
-      }
-         #snapAndStop {
+      #snapAndStop {
         display: none;
       }
     </style>
@@ -65,7 +64,7 @@
     </header>
 
     <main>
-   <h1>Take a Photo</h1>
+     <h1>Take a Photo</h1>
     <p id="loading">Loading...</p>
     <video id="video" width="640" height="480"></video>
     <button id="start">Start Camera</button>
@@ -101,6 +100,7 @@
                 track.stop();
               });
               video.style.display = 'none';
+              canvas.style.display = 'none';
 
               // Display photo in div element with unique id and timestamp
               var dataURL = canvas.toDataURL('image/png');
