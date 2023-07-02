@@ -3,7 +3,17 @@
 
 <div class="apprentice-Container">
 
+<head>
+    <style>
+      #video {
+        display: none;
+      }
 
+       #loading {
+        display: none;
+      }
+    </style>
+</head>
     @* <header>
 
         <h2>CrateApprentice</h2>
@@ -36,7 +46,7 @@
     </header> *@
 
 
-         @* <header>
+         <header>
 
         <h2>file Uploader</h2>
         <form asp-action="FileUploader" asp-controller="Home" method="Post" enctype="multipart/form-data">
@@ -49,8 +59,48 @@
             <input type="submit" value="Submit!">
         </form>
 
-    </header> *@
+    </header>
+
     <main>
+     <h1>Take a Photo</h1>
+     <p id="loading">Loading...</p>
+    <video id="video" width="640" height="480"></video>
+    <button id="start">Start Camera</button>
+    <button id="snapAndStop">Snap Photo and Stop Camera</button>
+    <canvas id="canvas" width="640" height="480"></canvas>
+
+    <script>
+      // Elements for taking the snapshot
+      var loading = document.getElementById('loading');
+      var video = document.getElementById('video');
+      var canvas = document.getElementById('canvas');
+      var context = canvas.getContext('2d');
+      var start = document.getElementById('start');
+      var snapAndStop = document.getElementById('snapAndStop');
+
+      // Start camera
+      start.addEventListener('click', function () {
+        loading.style.display = 'block';
+        if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+          navigator.mediaDevices.getUserMedia({ video: true }).then(function (stream) {
+            loading.style.display = 'none';
+            video.style.display = 'block';
+            video.srcObject = stream;
+            video.play();
+
+            // Snap photo and stop camera
+            snapAndStop.addEventListener('click', function () {
+              context.drawImage(video, 0, 0, 640, 480);
+              stream.getTracks().forEach(function (track) {
+                track.stop();
+              });
+              video.style.display = 'none';
+            });
+          });
+        }
+      });
+    </script>
 
     </main>
+   
 </div>

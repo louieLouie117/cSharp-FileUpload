@@ -3,7 +3,6 @@ using Microsoft.AspNetCore.Mvc;
 using FileUpload.Models;
 using System.Linq;
 using System.Collections.Generic;
-using Microsoft.AspNetCore.Hosting;
 
 
 
@@ -11,9 +10,7 @@ using Microsoft.AspNetCore.Hosting;
 using System.IO;
 using System.Threading.Tasks;
 using IFormFile = Microsoft.AspNetCore.Http.IFormFile;
-
-
-
+using Microsoft.AspNetCore.Hosting;
 
 
 namespace FileUpload.Controllers
