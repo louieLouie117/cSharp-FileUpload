@@ -3,68 +3,70 @@
 
 <div class="apprentice-Container">
 
-<head>
+  <head>
     <style>
-    #loading {
+      #loading {
         display: none;
       }
+
       #video {
         display: none;
       }
+
       #snapAndStop {
         display: none;
       }
     </style>
-</head>
-    @* <header>
+  </head>
+  @* <header>
 
-        <h2>CrateApprentice</h2>
-        <form asp-action="CrateApprentice" asp-controller="Home" method="Post" enctype="multipart/form-data">
+  <h2>CrateApprentice</h2>
+  <form asp-action="CrateApprentice" asp-controller="Home" method="Post" enctype="multipart/form-data">
 
-            <input asp-for="name" placeholder="name">
-            <input asp-for="UploadName" placeholder="name" style="display: none;">
-       
-            <input asp-for="files" type="file" multiple>
+  <input asp-for="name" placeholder="name">
+  <input asp-for="UploadName" placeholder="name" style="display: none;">
 
-            <input type="submit" value="Submit!">
-        </form>
+  <input asp-for="files" type="file" multiple>
 
-    </header> *@
+  <input type="submit" value="Submit!">
+  </form>
 
-
-    @* working code bellow------------------- *@
-     @* <header class="hidden">
-        
-        <h2> UploadFile WebHost</h2>
-        <form asp-action="ServerFileUploader" asp-controller="Home" method="Post" enctype="multipart/form-data">
-
-            <input asp-for="name" placeholder="name">
-            <input asp-for="UploadName" placeholder="name" style="display: none;">
-            <input asp-for="files" type="file" multiple>
-
-            <input type="submit" value="Submit!">
-        </form>
-
-    </header> *@
+  </header> *@
 
 
-         @* <header>
+  @* working code bellow------------------- *@
+  <header class="hidden">
 
-        <h2>file Uploader</h2>
-        <form asp-action="FileUploader" asp-controller="Home" method="Post" enctype="multipart/form-data">
+    <h2> UploadFile WebHost</h2>
+    <form asp-action="ServerFileUploader" asp-controller="Home" method="Post" enctype="multipart/form-data">
 
-            <input asp-for="name" placeholder="name">
-            <input asp-for="UploadName" placeholder="name" style="display: none;">
-       
-            <input asp-for="files" type="file" multiple>
+      <input asp-for="name" placeholder="name">
+      <input asp-for="UploadName" placeholder="name" style="display: none;">
+      <input asp-for="files" type="file" multiple>
 
-            <input type="submit" value="Submit!">
-        </form>
+      <input type="submit" value="Submit!">
+    </form>
 
-    </header> *@
+  </header>
 
-    <main>
-       <h1>Take a Photo</h1>
+
+  @* <header>
+
+  <h2>file Uploader</h2>
+  <form asp-action="FileUploader" asp-controller="Home" method="Post" enctype="multipart/form-data">
+
+  <input asp-for="name" placeholder="name">
+  <input asp-for="UploadName" placeholder="name" style="display: none;">
+
+  <input asp-for="files" type="file" multiple>
+
+  <input type="submit" value="Submit!">
+  </form>
+
+  </header> *@
+
+  <main>
+    <h1>Take a Photo</h1>
     <p id="loading">Loading...</p>
     <video id="video" width="640" height="480"></video>
     <button id="start">Start Camera</button>
@@ -125,6 +127,6 @@
       });
     </script>
 
-    </main>
-   
+  </main>
+
 </div>

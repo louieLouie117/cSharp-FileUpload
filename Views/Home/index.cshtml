@@ -14,6 +14,10 @@
 <body>
     <header>
         <h1>Hello, FileUpload</h1>
+        <p>R2.0</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus qui odio necessitatibus dignissimos
+            assumenda fuga delectus facilis error molestias, dolores voluptatibus ab molestiae alias. Saepe ipsam
+            voluptatum deserunt aut ipsum!</p>
         <partial name="newApprenticePartial" model="@Model.Apprentice" />
     </header>
 
@@ -32,15 +36,15 @@
 
                             <h2>@item.name</h2>
                             <p>@item.UploadName</p>
-                            
+
 
                         </div>
 
                         <header>
                             <a>edit</a>
                             <form asp-controller="Home" asp-action="DeleteImage" method="Post">
-                                <input  type="text" value="@item.ApprenticeId" asp-for="Apprentice.ApprenticeId">
-                            <input  type="submit"   value="Delete" >
+                                <input type="text" value="@item.ApprenticeId" asp-for="Apprentice.ApprenticeId">
+                                <input type="submit" value="Delete">
                             </form>
                         </header>
 
